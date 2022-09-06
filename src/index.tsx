@@ -1,4 +1,5 @@
 import React, { FC, HTMLAttributes, ReactChild } from 'react';
+import { ProfileHeader } from './ProfileHeader';
 
 export interface Props extends HTMLAttributes<HTMLDivElement> {
   /** custom content, defaults to 'the snozzberries taste like snozzberries' */
@@ -13,3 +14,11 @@ export interface Props extends HTMLAttributes<HTMLDivElement> {
 export const Thing: FC<Props> = ({ children }) => {
   return <div>{children || `the snozzberries taste like snozzberries`}</div>;
 };
+
+export const GhProfileHeader: FC<Props> = ({children}) => {
+  return <div>
+    <GhProfileHeader children={children} />
+    {children || "no children"}
+  </div>
+};
+
